@@ -11,6 +11,8 @@ Pod
 	pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxTest'
+  pod 'Quick'
+  pod 'Nimble'
   target 'MVVMRXTests' do
     inherit! :search_paths
     # Pods for testing

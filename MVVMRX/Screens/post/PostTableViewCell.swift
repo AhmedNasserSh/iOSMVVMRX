@@ -21,5 +21,9 @@ class PostTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    func setName(name:String,row:Int){
+        postName.text = name
+        postName.accessibilityIdentifier = "\(row)"
+    }
 
 }

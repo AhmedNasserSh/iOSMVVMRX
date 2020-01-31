@@ -7,17 +7,14 @@
 //
 
 import Foundation
-class PostResponse :BaseModel {
-    public class PostModel :Equatable{
-        var name : String?
+struct PostResponse :Codable  {
+     struct PostModel :Codable,Equatable{
+        var name : String
         
-        init(name :String) {
-            self.name = name
-        }
         public static func == (lhs: PostResponse.PostModel, rhs: PostResponse.PostModel) -> Bool {
             return lhs.name == rhs.name
         }
     }
-    var posts :[PostModel]?
+    var posts :[PostModel]
 }
 

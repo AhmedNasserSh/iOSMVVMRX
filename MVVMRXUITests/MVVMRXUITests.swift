@@ -23,13 +23,16 @@ class MVVMRXUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // UI tests must launch the application that they test.
+    func testTableView() {
         let app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let table = app.tables.matching(identifier: "tableview")
+        let cell = table.cells.matching(identifier: "0")
+        let textLabel = cell.staticTexts.element(matching: .any, identifier: "0").label
+        
+        XCTAssertEqual(textLabel, "hi")
+        
     }
 
     func testLaunchPerformance() {

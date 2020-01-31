@@ -8,6 +8,6 @@
 
 import Foundation
 class BaseModel :Codable {
-    var errorCode :Int
-    var errorDescription :String
+    var errorCode :Int?
+    var errorDescription :String?
 }

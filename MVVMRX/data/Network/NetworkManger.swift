@@ -18,7 +18,7 @@ class NetworkManger :NetworkDispatcher {
                 if case .failure(let error) = data.result {
                     observer.onError(error)
                 }else{
-                    let response = Response(response: data, request: request)
+                    let response = Response(response: data.data, request: request)
                     observer.onNext(response)
                 }
             }

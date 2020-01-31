@@ -13,13 +13,14 @@ class PostViewModel : BaseViewModel<PostsApiWorker> {
     
     func getPosts(page :Int) {
         operation?.request = PostRequest.post(page: page)
-        self.operation?.excute(dispatcher: NetworkManger.shared).subscribe({ (event) in
+        let dispatcher = MockupDispatcher(json:getJson())
+        self.operation?.excute(dispatcher: dispatcher).subscribe({ (event) in
             switch event {
             case .next(let post) :
-                guard let data = post as? PostResponse , let postsData = data.posts else{
+                guard let data = post as? PostResponse else{
                     break
                 }
-                self.posts.onNext(postsData)
+                self.posts.onNext(data.posts)
                 break
             case .error(_):
                 break
@@ -28,5 +29,7 @@ class PostViewModel : BaseViewModel<PostsApiWorker> {
             }
         }).disposed(by: bag)
     }
-    
+    func getJson() -> String {
+        return "{\"posts\":[ {\"name\" : \"hi\"},{\"name\" : \"hello\"}]}"
+    }
 }

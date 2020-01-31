@@ -20,8 +20,10 @@ class PostViewController: UIViewController {
         viewModel.getPosts(page: 1)
     }
     func bindViews () {
+        tableView.accessibilityIdentifier = "tableview"
         viewModel.posts.bind(to: tableView.rx.items(cellIdentifier: "PostTableViewCell", cellType: PostTableViewCell.self)) { (row,post,cell) in
-            cell.postName.text = post.name
+            cell.setName(name: post.name, row: row)
+            cell.accessibilityIdentifier = "\(row)"
         }.disposed(by: bag)
     }
 

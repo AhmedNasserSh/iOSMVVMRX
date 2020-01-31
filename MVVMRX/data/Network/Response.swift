@@ -13,12 +13,13 @@ enum Response {
     case data(_:Data)
     case error(_:Int, _: Error?)
     
-    init(response :DataResponse<String>,request :BaseRequest) {
-        guard let data = response.data else {
+    
+    init(response :Data?,request :BaseRequest?) {
+        guard let data = response else {
             self = .error(500, NetworkErrors.noData)
             return
         }
-        switch request.dataType {
+        switch request?.dataType {
         case .data:
             self = .data(data)
         case .json:

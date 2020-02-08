@@ -14,20 +14,12 @@ class PostViewModel : BaseViewModel<PostsApiWorker> {
     func getPosts(page :Int) {
         operation?.request = PostRequest.post(page: page)
         let dispatcher = MockupDispatcher(json:getJson())
-        self.operation?.excute(dispatcher: dispatcher).subscribe({ (event) in
-            switch event {
-            case .next(let post) :
-                guard let data = post as? PostResponse else{
-                    break
-                }
-                self.posts.onNext(data.posts)
-                break
-            case .error(_):
-                break
-            case .completed:
-                break
+        self.operation?.excute(dispatcher: dispatcher).subscribe(onNext: { (response) in
+            guard let data = response as? PostResponse else{
+                return
             }
-        }).disposed(by: bag)
+            self.posts.onNext(data.posts)
+        }, onError: { (error) in }).disposed(by: bag)
     }
     func getJson() -> String {
         return "{\"posts\":[ {\"name\" : \"hi\"},{\"name\" : \"hello\"}]}"

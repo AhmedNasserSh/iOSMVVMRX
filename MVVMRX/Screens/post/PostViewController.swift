@@ -13,6 +13,7 @@ class PostViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let viewModel = PostViewModel()
     var bag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.bindOperaion(operation: PostsApiWorker())

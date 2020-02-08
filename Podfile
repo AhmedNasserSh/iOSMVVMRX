@@ -16,6 +16,8 @@ Pod
   target 'MVVMRXTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'iOSSnapshotTestCase'
+
   end
 
   target 'MVVMRXUITests' do

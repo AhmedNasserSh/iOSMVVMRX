@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		91822D1781D494A8907BE036 /* Pods_MVVMRX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CB8FA889C27E53DE2503A34 /* Pods_MVVMRX.framework */; };
+		BE23AD0923EDD91C00A90AA2 /* MVVMRXSnapShotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE23AD0623EDD6F700A90AA2 /* MVVMRXSnapShotTests.swift */; };
 		BE5A233623E2C3710007EAB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A233523E2C3710007EAB6 /* AppDelegate.swift */; };
 		BE5A233823E2C3710007EAB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A233723E2C3710007EAB6 /* SceneDelegate.swift */; };
 		BE5A233F23E2C3740007EAB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5A233E23E2C3740007EAB6 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		8CC8A31550883C8D15FA8439 /* Pods-MVVMRX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMRX.release.xcconfig"; path = "Target Support Files/Pods-MVVMRX/Pods-MVVMRX.release.xcconfig"; sourceTree = "<group>"; };
 		B1B1501C6D32B4021366693D /* Pods-MVVMRX-MVVMRXUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMRX-MVVMRXUITests.release.xcconfig"; path = "Target Support Files/Pods-MVVMRX-MVVMRXUITests/Pods-MVVMRX-MVVMRXUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BBAF93598547655D8F213F63 /* Pods-MVVMRX-MVVMRXUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMRX-MVVMRXUITests.debug.xcconfig"; path = "Target Support Files/Pods-MVVMRX-MVVMRXUITests/Pods-MVVMRX-MVVMRXUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BE23AD0623EDD6F700A90AA2 /* MVVMRXSnapShotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMRXSnapShotTests.swift; sourceTree = "<group>"; };
 		BE5A233223E2C3710007EAB6 /* MVVMRX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMRX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5A233523E2C3710007EAB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE5A233723E2C3710007EAB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				BE5A234C23E2C3740007EAB6 /* PostsViewModelTests.swift */,
 				BE5A234E23E2C3740007EAB6 /* Info.plist */,
 				BE7F0B0A23E4986E0063CDEF /* PostsViewModelSpec.swift */,
+				BE23AD0623EDD6F700A90AA2 /* MVVMRXSnapShotTests.swift */,
 			);
 			path = MVVMRXTests;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				BE5A234423E2C3740007EAB6 /* Sources */,
 				BE5A234523E2C3740007EAB6 /* Frameworks */,
 				BE5A234623E2C3740007EAB6 /* Resources */,
+				3DDD8D602E39BCB818195BEF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -465,6 +469,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MVVMRX-MVVMRXUITests/Pods-MVVMRX-MVVMRXUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3DDD8D602E39BCB818195BEF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVVMRXTests/Pods-MVVMRXTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVVMRXTests/Pods-MVVMRXTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MVVMRXTests/Pods-MVVMRXTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B935C3418336A70DF8521013 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -564,6 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE23AD0923EDD91C00A90AA2 /* MVVMRXSnapShotTests.swift in Sources */,
 				BE5A234D23E2C3740007EAB6 /* PostsViewModelTests.swift in Sources */,
 				BE7F0B0B23E4986E0063CDEF /* PostsViewModelSpec.swift in Sources */,
 			);
